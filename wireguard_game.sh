@@ -65,7 +65,7 @@ udp_install(){
     #下载udpspeeder和udp2raw （amd64版）
     mkdir /usr/src/udp
     cd /usr/src/udp
-    wget https://github.com/ggghju/wireguard/blob/main/speederv2
+    wget https://raw.githubusercontent.com/ggghju/wireguard/master/speederv2
     wget https://raw.githubusercontent.com/ggghju/wireguard/master/run.sh
     chmod +x speederv2 run.sh
     
