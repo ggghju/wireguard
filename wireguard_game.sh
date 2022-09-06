@@ -72,7 +72,7 @@ udp_install(){
     #启动udpspeeder和udp2raw
     udpport=$(rand 10000 60000)
     password=$(randpwd)
-    nohup ./speederv2 -s -ll0.0.0.0:9999 -r127.0.0.1:$port -f2:4 --mode 0 --timeout 0 >speeder.log 2>&1 &
+    nohup ./speederv2 -s -l0.0.0.0:9999 -r127.0.0.1:1195 -f2:4 --mode 0 --timeout 0  >speeder.log 2>&1 &
     echo -e "\033[37;41m输入你客户端电脑的默认网关，打开cmd，使用ipconfig命令查看\033[0m"
     read -p "比如192.168.1.1 ：" ugateway
 
@@ -112,7 +112,7 @@ cat > /etc/rc.d/init.d/autoudp<<-EOF
 #chkconfig: 2345 80 90
 #description:autoudp
 cd /usr/src/udp
-nohup ./speederv2 -s -ll0.0.0.0:9999 -r127.0.0.1:$port -f2:4 --mode 0 --timeout 0 >speeder.log 2>&1 &
+nohup ./speederv2 -s -l0.0.0.0:9999 -r127.0.0.1:1195 -f2:4 --mode 0 --timeout 0  >speeder.log 2>&1 &
 EOF
 
 #设置脚本权限
